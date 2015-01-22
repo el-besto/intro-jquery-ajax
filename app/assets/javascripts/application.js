@@ -35,17 +35,16 @@
 // exercise part 2: 
 //// Add an div with id of restaurants-conatiner to restaurants/index.html.erb.
 //// Append all the elements to that div instead.
-$(function () {
-  var $container = $("#restaurants-container");
-  $.get("/restaurants.json")
-    .done(function (restaurants) {
-      restaurants.forEach(function (restaurant) {
-        $container.append("<div>" + restaurant.name + "</div>");
-      });
-    });
+// $(function () {
+//   var $container = $("#restaurants-container");
+//   $.get("/restaurants.json")
+//     .done(function (restaurants) {
+//       restaurants.forEach(function (restaurant) {
+//         $container.append("<div>" + restaurant.name + "</div>");
+//       });
+//     });
 
-});
-
+// });
 ////////////////////
 
 var restaurantQuery = function (q){
