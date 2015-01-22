@@ -14,3 +14,27 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+// wait for the page to load 
+$(function (){
+  // make a req to get all articles
+  $.get('/restaurants.json')
+  // wait for it to finish
+   .done(function (data){
+    console.log(data);
+   });
+
+  // post to `restaurant.json`
+  // the `.json` tells our rails app
+  // that we want `json` back
+  // after it creates something
+  $.post('/restaurants.json', {
+          restaurant: {
+            name: "restaurant created from post request to /restaurants.json"
+          }
+  })
+  // newly created restaurant
+  .done (function (data) {
+    console.log("New Restaurant", data)
+  });
+});
